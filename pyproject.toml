@@ -4,18 +4,10 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.14"
-dependencies = [
-    "fastapi[standard]>=0.134.0",
-    "pydantic>=2.12.5",
-]
+dependencies = ["fastapi[standard]>=0.134.0", "pydantic>=2.12.5"]
 
 [dependency-groups]
-dev = [
-    "pytest>=9.0.2",
-    "pytest-cov>=7.0.0",
-    "ruff>=0.15.4",
-    "ty>=0.0.19",
-]
+dev = ["pytest>=9.0.2", "pytest-cov>=7.0.0", "ruff>=0.15.4", "ty>=0.0.19"]
 
 
 [tool.ruff]
@@ -95,7 +87,7 @@ branch = true
 
 [tool.coverage.report]
 exclude_also = [
-    "if TYPE_CHECKING:" # imports / code here is executed during mypy tests.
+    "if TYPE_CHECKING:", # imports / code here is executed during mypy tests.
 ]
 fail_under = 75
 precision = 2
