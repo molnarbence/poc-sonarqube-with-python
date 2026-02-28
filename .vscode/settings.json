@@ -1,0 +1,6 @@
+{
+    "sonarlint.connectedMode.project": {
+        "connectionId": "molnarbence-github",
+        "projectKey": "molnarbence-github_poc-sonarqube-with-python"
+    }
+}
