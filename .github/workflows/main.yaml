@@ -9,9 +9,6 @@ jobs:
   sonarqube:
     name: SonarQube
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [3.11, 3.12, 3.14]
     steps:
       - uses: actions/checkout@v4
         with:
@@ -21,7 +18,6 @@ jobs:
         with:
           activate-environment: true
           enable-cache: true
-          python-version: ${{ matrix.python-version }}
 
       - name: Setup Python
         run: uv python install
@@ -42,4 +38,3 @@ jobs:
         with:
           args: >
             -Dsonar.qualitygate.wait=true
-            -Dsonar.python.version=${{ matrix.python-version }}
