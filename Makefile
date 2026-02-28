@@ -33,6 +33,4 @@ test: lint unit  ## Run all tests.
 
 .PHONY: coverage
 coverage:
-	uv run --frozen coverage run --source=src --branch -m pytest --junitxml=build/test.xml -v
-	uv run --frozen coverage report
-	uv run --frozen coverage xml -i -o build/coverage.xml
+	uv run --frozen pytest --cov=app --cov-report=xml:build/coverage.xml tests

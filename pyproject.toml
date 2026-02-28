@@ -10,7 +10,12 @@ dependencies = [
 ]
 
 [dependency-groups]
-dev = ["pytest>=9.0.2", "ruff>=0.15.4", "ty>=0.0.19"]
+dev = [
+    "pytest>=9.0.2",
+    "pytest-cov>=7.0.0",
+    "ruff>=0.15.4",
+    "ty>=0.0.19",
+]
 
 
 [tool.ruff]
@@ -83,3 +88,14 @@ convention = "pep257"
 docstring-quotes = "double"
 inline-quotes = "double"
 multiline-quotes = "double"
+
+[tool.coverage.run]
+branch = true
+
+
+[tool.coverage.report]
+exclude_also = [
+    "if TYPE_CHECKING:" # imports / code here is executed during mypy tests.
+]
+fail_under = 75
+precision = 2
