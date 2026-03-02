@@ -33,4 +33,4 @@ test: lint unit  ## Run all tests.
 
 .PHONY: coverage
 coverage:
-	uv run --frozen pytest --cov=app --cov-report=xml:build/coverage.xml tests
+	uv run --frozen pytest --cov --cov-report=xml

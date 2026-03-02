@@ -81,9 +81,14 @@ docstring-quotes = "double"
 inline-quotes = "double"
 multiline-quotes = "double"
 
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+
 [tool.coverage.run]
 branch = true
-
+source = ["app"]
+relative_files = true
 
 [tool.coverage.report]
 exclude_also = [
@@ -91,3 +96,6 @@ exclude_also = [
 ]
 fail_under = 75
 precision = 2
+
+[tool.coverage.xml]
+output = "build/coverage.xml"
